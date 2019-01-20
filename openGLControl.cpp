@@ -1,13 +1,11 @@
-#pragma warning(disable:4996)
-#pragma comment(lib, "opengl32.lib")
-#pragma comment(lib, "glu32.lib")
-#pragma comment(lib, "glew32.lib")
+//#pragma warning(disable:4996)
+//#pragma comment(lib, "opengl32.lib")
+//#pragma comment(lib, "glu32.lib")
+//#pragma comment(lib, "glew32.lib")
 
 #include "common_header.h"
 
 #include "openGLControl.h"
-
-#include <GLFW/glfw3.h>
 
 #include <GLUT/glut.h>
 #include <GLKit/GLKMath.h>

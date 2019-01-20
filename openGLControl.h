@@ -2,6 +2,8 @@
 
 #define SIMPLE_OPENGL_CLASS_NAME "simple_openGL_class_name"
 
+#include "common_header.h"
+
 #include <GLFW/glfw3.h>
 
 // Provides convenient usage of OpenGL.

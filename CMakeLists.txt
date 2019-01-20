@@ -27,25 +27,26 @@ add_executable(OpenGL_2_2018_2019
         #data/textures/met_wall01a.jpg
         #data/textures/tower.jpg
         common_header.h
-        dirLight.cpp
-        dirLight.h
-        flyingCamera.cpp
-        flyingCamera.h
+        #dirLight.cpp
+        #dirLight.h
+        #flyingCamera.cpp
+        #flyingCamera.h
         openGLControl.cpp
         openGLControl.h
-        renderScene.cpp
-        shaders.cpp
-        shaders.h
-        skybox.cpp
-        skybox.h
-        static_geometry.cpp
-        static_geometry.h
-        texture.cpp
-        texture.h
-        vertexBufferObject.cpp
-        vertexBufferObject.h
-        glfw_OpenGLApp.cpp
-        glfw_OpenGLApp.h)
+        #renderScene.cpp
+        #shaders.cpp
+        #shaders.h
+        #skybox.cpp
+        #skybox.h
+        #static_geometry.cpp
+        #static_geometry.h
+        #texture.cpp
+        #texture.h
+        #vertexBufferObject.cpp
+        #vertexBufferObject.h
+        #glfw_OpenGLApp.cpp
+        #glfw_OpenGLApp.h
+        Main.cpp)
 
 if(APPLE)
     set(CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS "${CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS} -undefined dynamic_lookup")
@@ -54,6 +55,20 @@ endif(APPLE)
 target_include_directories(OpenGL_2_2018_2019 PUBLIC /Libs/FreeImage>)
 target_link_directories(OpenGL_2_2018_2019 PUBLIC Libs/FreeImage)
 
+find_library(COCOA_LIBRARY Cocoa)
+target_link_libraries(OpenGL_2_2018_2019 ${COCOA_LIBRARY})
+
+find_library(OPENGL_LIBRARY OpenGL)
+target_link_libraries(OpenGL_2_2018_2019 ${OPENGL_LIBRARY})
+
+find_library(IOKIT_LIBRARY IOKit)
+target_link_libraries(OpenGL_2_2018_2019 ${IOKIT_LIBRARY})
+
+find_library(CORE_VIDEO_LIBRARY CoreVideo)
+target_link_libraries(OpenGL_2_2018_2019 ${CORE_VIDEO_LIBRARY})
+
+find_library(GLFW_LIBRARY GLFW3)
+target_link_libraries(OpenGL_2_2018_2019 ${GLFW_LIBRARY})
 
 find_package(OpenGL REQUIRED)
 find_package(GLEW 2.1 REQUIRED)

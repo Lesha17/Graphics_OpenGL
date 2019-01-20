@@ -3,8 +3,6 @@
 
 #include "glfw_OpenGLApp.h"
 
-COpenGLApp appMain;
-
 // Return true if Key is pressed.
 // iKey - virtual Key code
 int Keys::Key(int iKey)
@@ -111,21 +109,5 @@ void COpenGLApp::Shutdown()
 	oglControl.ReleaseOpenGLControl(&oglControl);
 
 	glfwDestroyWindow(window);
-}
-
-// Application entry point.
-int main()
-{
-	if(!appMain.InitializeApp("������� 2.  2018-2019"))
-		return 0;
-
-	if(!appMain.CreateAppWindow("������� 2. 2018-2019. ��������� ���������, Skybox, ���������������������"))
-		return 0;
-	appMain.ResetTimer();
-
-	appMain.AppBody();
-	appMain.Shutdown();
-
-	return 0;
 }
 

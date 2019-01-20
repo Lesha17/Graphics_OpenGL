@@ -1,5 +1,8 @@
 // Header files of frequent usage
 
+#ifndef COMMON_HEADER
+#define COMMON_HEADER
+
 #include <ctime>
 
 #include <algorithm>
@@ -24,3 +27,5 @@ using namespace std;
 #define RSFOR(q,s,e) for(int q=s;q>=e;q--)
 
 #define ESZ(elem) (int)elem.size()
+
+#endif
