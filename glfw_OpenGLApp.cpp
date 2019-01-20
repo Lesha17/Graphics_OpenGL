@@ -163,6 +163,6 @@ void COpenGLApp::Shutdown()
 {
 	oglControl.ReleaseOpenGLControl(&oglControl);
 
-	glfwDestroyWindow(window);
+	glfwTerminate();
 }
 
