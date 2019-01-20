@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="OpenGL_2_2018_2019"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\glm\;CMake Files\..\..\..\..\usr\local\lib\cmake\glfw3\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="OpenGL_2_2018_2019">
+				<Option output="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/OpenGL_2_2018_2019" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/."/>
+					<Add directory="/Libs/FreeImage&gt;"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/OpenGL.framework"/>
+					<Add directory="/usr/local/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/Makefile&quot;  VERBOSE=1 OpenGL_2_2018_2019"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="OpenGL_2_2018_2019/fast">
+				<Option output="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/OpenGL_2_2018_2019" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/."/>
+					<Add directory="/Libs/FreeImage&gt;"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/OpenGL.framework"/>
+					<Add directory="/usr/local/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/Makefile&quot;  VERBOSE=1 OpenGL_2_2018_2019/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/common_header.h">
+			<Option target="OpenGL_2_2018_2019"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/dirLight.cpp">
+			<Option target="OpenGL_2_2018_2019"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/dirLight.h">
+			<Option target="OpenGL_2_2018_2019"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/flyingCamera.cpp">
+			<Option target="OpenGL_2_2018_2019"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/flyingCamera.h">
+			<Option target="OpenGL_2_2018_2019"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/glfw_OpenGLApp.cpp">
+			<Option target="OpenGL_2_2018_2019"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/glfw_OpenGLApp.h">
+			<Option target="OpenGL_2_2018_2019"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/openGLControl.cpp">
+			<Option target="OpenGL_2_2018_2019"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/openGLControl.h">
+			<Option target="OpenGL_2_2018_2019"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/renderScene.cpp">
+			<Option target="OpenGL_2_2018_2019"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/shaders.cpp">
+			<Option target="OpenGL_2_2018_2019"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/shaders.h">
+			<Option target="OpenGL_2_2018_2019"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/skybox.cpp">
+			<Option target="OpenGL_2_2018_2019"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/skybox.h">
+			<Option target="OpenGL_2_2018_2019"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/static_geometry.cpp">
+			<Option target="OpenGL_2_2018_2019"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/static_geometry.h">
+			<Option target="OpenGL_2_2018_2019"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/texture.cpp">
+			<Option target="OpenGL_2_2018_2019"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/texture.h">
+			<Option target="OpenGL_2_2018_2019"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/vertexBufferObject.cpp">
+			<Option target="OpenGL_2_2018_2019"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/vertexBufferObject.h">
+			<Option target="OpenGL_2_2018_2019"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/../../../../usr/local/lib/cmake/glm/glmConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\glm\"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/../../../../usr/local/lib/cmake/glm/glmConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\glm\"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/../../../../usr/local/lib/cmake/glm/glmTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\glm\"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/../../../../usr/local/lib/cmake/glfw3/glfw3Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\glfw3\"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/../../../../usr/local/lib/cmake/glfw3/glfw3ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\glfw3\"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/../../../../usr/local/lib/cmake/glfw3/glfw3Targets-noconfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\glfw3\"/>
+		</Unit>
+		<Unit filename="/Users/machnev/OpenGLProjects/OpenGL_2_2018-2019/../../../../usr/local/lib/cmake/glfw3/glfw3Targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\glfw3\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
