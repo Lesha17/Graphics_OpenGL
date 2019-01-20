@@ -33,11 +33,8 @@ public:
 	COpenGLControl();
 
 private:
-	bool InitGLEW();
 
     GLFWwindow * window;
-
-	static bool bGlewInitialized;
 
 	// Used for FPS calculation
 	int iFPSCount, iCurrentFPS;

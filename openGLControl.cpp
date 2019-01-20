@@ -12,59 +12,10 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 
-void error_callback(int error, const char* description)
-{
-	fprintf(stderr, "Error: %s\n", description);
-}
-
-bool COpenGLControl::bGlewInitialized = false;
-
 COpenGLControl::COpenGLControl()
 {
 	iFPSCount = 0;
 	iCurrentFPS = 0;
-}
-
-// Creates fake window and OpenGL rendering context, within which GLEW is initialized.
-bool COpenGLControl::InitGLEW()
-{
-	if(bGlewInitialized)return true;
-
-	if (!glfwInit())
-		exit(EXIT_FAILURE);
-
-	glfwSetErrorCallback(error_callback);
-
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	GLFWwindow* window = glfwCreateWindow(0, 0, "FAKE", NULL, NULL);
-	if (!window)
-	{
-		// Window or OpenGL context creation failed
-		glfwTerminate();
-		exit(EXIT_FAILURE);
-	}
-
-
-	glfwMakeContextCurrent(window);
-
-	bool bResult = true;
-
-	if(!bGlewInitialized)
-	{
-		GLenum initRes = glewInit();
-		if(initRes != GLEW_OK)
-		{
-			error_callback(initRes, "Couldn't initialize GLEW!");
-			bResult = false;
-		}
-		bGlewInitialized = true;
-	}
-
-	glfwMakeContextCurrent(NULL);
-	glfwDestroyWindow(window);
-
-	return bResult;
 }
 
 // Initializes OpenGL rendering context. If succeeds, returns true.
@@ -74,8 +25,6 @@ bool COpenGLControl::InitGLEW()
 // a_releaseScene - optional parameter of release function
 bool COpenGLControl::InitOpenGL(GLFWwindow * a_window, void (*a_ptrInitScene)(void *), void (*a_ptrRenderScene)(void *), void(*a_ptrReleaseScene)(void *), void * lpParam)
 {
-	if(!InitGLEW())return false;
-
 	bool bError = false;
 
 	window = a_window;

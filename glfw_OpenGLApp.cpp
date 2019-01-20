@@ -3,8 +3,15 @@
 
 #include "glfw_OpenGLApp.h"
 
+
 std::map<GLFWwindow*,COpenGLApp*> windowToApp;
 COpenGLApp appMain;
+bool COpenGLApp::bGlewInitialized = false;
+
+void error_callback(int error, const char* description)
+{
+	fprintf(stderr, "Error: %s\n", description);
+}
 
 // Return true if Key is pressed.
 // iKey - virtual Key code
@@ -66,20 +73,65 @@ bool COpenGLApp::InitializeApp(string a_sAppName)
 	return 1;
 }
 
+// Creates fake window and OpenGL rendering context, within which GLEW is initialized.
+bool COpenGLApp::InitGLEW()
+{
+	if(bGlewInitialized)return true;
+
+	glfwSetErrorCallback(error_callback);
+
+	if (!glfwInit())
+		return false;
+
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
+	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	GLFWwindow* window = glfwCreateWindow(1, 1, "FAKE", NULL, NULL);
+	if (!window)
+	{
+		// Window or OpenGL context creation failed
+		glfwTerminate();
+		return false;
+	}
+
+
+	glfwMakeContextCurrent(window);
+
+	bool bResult = true;
+
+	if(!bGlewInitialized)
+	{
+		GLenum initRes = glewInit();
+		if(initRes != GLEW_OK)
+		{
+			error_callback(initRes, "Couldn't initialize GLEW!");
+			bResult = false;
+		}
+		bGlewInitialized = true;
+	}
+
+	glfwMakeContextCurrent(NULL);
+	glfwDestroyWindow(window);
+
+	return bResult;
+}
+
 // Creates main application window.
 // sTitle - title of created window
 bool COpenGLApp::CreateAppWindow(const char * tittle)
 {
+	if(!InitGLEW())return false;
 
 	window = glfwCreateWindow(800, 600, tittle, NULL, NULL);
 	windowToApp[window] = this;
 	if (!window)
 	{
 		glfwTerminate();
-		exit(EXIT_FAILURE);
+		return false;
 	}
 
-	if(!oglControl.InitOpenGL(window, InitScene, RenderScene, ReleaseScene, &oglControl))return false;
+	if(!oglControl.InitOpenGL(window, InitScene, RenderScene, ReleaseScene, &oglControl)) return false;
 
 	glfwSetWindowFocusCallback(window, window_focus_callback);
 	glfwSetWindowSizeCallback(window, window_size_callback);
