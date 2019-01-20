@@ -6,6 +6,8 @@
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtx/rotate_vector.hpp>
 
+#include <iostream>
+
 const float PI = float(atan(1.0)*4.0);
 
 CFlyingCamera::CFlyingCamera()
@@ -107,13 +109,16 @@ void CFlyingCamera::Update()
 	vStrafe *= fSpeed;
 
 	int iMove = 0;
-	glm::vec3 vMoveBy;
+	glm::vec3 vMoveBy(0);
 	// Get vector of move
 	if(Keys::Key(iForw))vMoveBy += vMove*appMain.sof(1.0f);
 	if(Keys::Key(iBack))vMoveBy -= vMove*appMain.sof(1.0f);
 	if(Keys::Key(iLeft))vMoveBy -= vStrafe*appMain.sof(1.0f);
 	if(Keys::Key(iRight))vMoveBy += vStrafe*appMain.sof(1.0f);
 	vEye += vMoveBy; vView += vMoveBy;
+
+	std::cout << vEye.x << " " << vEye.y << " " << vEye.z << std::endl;
+	std::cout << vView.x << " " << vView.y << " " << vView.z << std::endl;
 }
 
 // Returns proper modelview matrix to make camera look.

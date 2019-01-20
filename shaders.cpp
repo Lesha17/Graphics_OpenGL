@@ -27,7 +27,7 @@ bool PrepareShaderPrograms()
 	{
 		string sExt = sShaderFileNames[i].substr(ESZ(sShaderFileNames[i])-4, 4);
 		int iShaderType = sExt == "vert" ? GL_VERTEX_SHADER : (sExt == "frag" ? GL_FRAGMENT_SHADER : GL_GEOMETRY_SHADER);
-		shShaders[i].LoadShader("data\\shaders\\"+sShaderFileNames[i], iShaderType);
+		shShaders[i].LoadShader("data/shaders/"+sShaderFileNames[i], iShaderType);
 	}
 
 	// Create shader programs

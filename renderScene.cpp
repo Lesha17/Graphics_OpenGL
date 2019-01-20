@@ -15,6 +15,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include <iostream>
+
 #define NUMTEXTURES 5
 
 /* One VBO, where all static data are stored now,
@@ -97,7 +99,11 @@ void InitScene(void * param)
 
 	FOR(i, NUMTEXTURES)
 	{
-		tTextures[i].LoadTexture2D("data\\textures\\"+sTextureNames[i], true);
+		if(tTextures[i].LoadTexture2D("data/textures/"+sTextureNames[i], true)) {
+            std::cout << "Successfully loaded texture: " << sTextureNames[i] << std::endl;
+        } else {
+            std::cout << "Failed to load texture" << std::endl;
+        }
 		tTextures[i].SetFiltering(TEXTURE_FILTER_MAG_BILINEAR, TEXTURE_FILTER_MIN_BILINEAR_MIPMAP);
 	}
 
@@ -108,7 +114,7 @@ void InitScene(void * param)
 	cCamera = CFlyingCamera(glm::vec3(0.0f, 10.0f, 120.0f), glm::vec3(0.0f, 10.0f, 119.0f), glm::vec3(0.0f, 1.0f, 0.0f), 25.0f, 0.001f);
 	cCamera.SetMovingKeys('W', 'S', 'A', 'D');
 
-	sbMainSkybox.LoadSkybox("data\\skyboxes\\jajlands1\\", "jajlands1_ft.jpg", "jajlands1_bk.jpg", "jajlands1_lf.jpg", "jajlands1_rt.jpg", "jajlands1_up.jpg", "jajlands1_dn.jpg");
+	sbMainSkybox.LoadSkybox("data/skyboxes/jajlands1/", "jajlands1_ft.jpg", "jajlands1_bk.jpg", "jajlands1_lf.jpg", "jajlands1_rt.jpg", "jajlands1_up.jpg", "jajlands1_dn.jpg");
 
 	dlSun = CDirectionalLight(glm::vec3(1.0f, 1.0f, 1.0f), glm::vec3(sqrt(2.0f) / 2, -sqrt(2.0f) / 2, 0), 1.0f);
 }

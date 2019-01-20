@@ -4,10 +4,10 @@ project(OpenGL_2_2018_2019)
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(.)
-#include_directories(data)
-#include_directories(data/shaders)
-#include_directories(data/skyboxes)
-#include_directories(data/textures)
+include_directories(data)
+include_directories(data/shaders)
+include_directories(data/skyboxes)
+include_directories(data/textures)
 
 add_executable(OpenGL_2_2018_2019
         data/shaders/color.frag

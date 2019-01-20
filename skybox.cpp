@@ -2,10 +2,16 @@
 
 #include "skybox.h"
 
+#include <iostream>
+
 // Loads skybox and creates VAO and VBO for it.
 void CSkybox::LoadSkybox(string a_sDirectory, string a_sFront, string a_sBack, string a_sLeft, string a_sRight, string a_sTop, string a_sBottom)
 {
-	tTextures[0].LoadTexture2D(a_sDirectory+a_sFront);
+	if(tTextures[0].LoadTexture2D(a_sDirectory+a_sFront)) {
+		std::cout << "Successfully loaded texture" << std::endl;
+	} else {
+		std::cout << "Failed to load texture" << std::endl;
+	}
 	tTextures[1].LoadTexture2D(a_sDirectory+a_sBack);
 	tTextures[2].LoadTexture2D(a_sDirectory+a_sLeft);
 	tTextures[3].LoadTexture2D(a_sDirectory+a_sRight);
