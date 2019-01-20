@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef STATIC_GEOMETRY
+#define STATIC_GEOMETRY
+
 #include "vertexBufferObject.h"
 
 extern glm::vec3 vCubeVertices[36];
@@ -15,3 +18,5 @@ int GenerateCylinder(CVertexBufferObject &vboDest, float fRadius, float fHeight,
 void AddSceneObjects(CVertexBufferObject& vboDest);
 void AddCube(CVertexBufferObject& vboDest);
 extern int iTorusFaces, iTorusFaces2;
+
+#endif

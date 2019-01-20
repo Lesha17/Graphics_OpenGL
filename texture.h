@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TEXTURE
+#define TEXTURE
+
 enum ETextureFiltering
 {
 	TEXTURE_FILTER_MAG_NEAREST = 0, // Nearest criterion for magnification
@@ -48,4 +51,6 @@ private:
 
 	string sPath;
 };
+
+#endif
 

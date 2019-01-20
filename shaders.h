@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef SHADERS
+#define SHADERS
+
 // Wraps OpenGL shader loading and compiling.
 class CShader
 {
@@ -71,3 +74,5 @@ bool PrepareShaderPrograms();
 
 extern CShader shShaders[NUMSHADERS];
 extern CShaderProgram spMain, spColor;
+
+#endif

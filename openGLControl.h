@@ -1,6 +1,7 @@
 #pragma once
 
-#define SIMPLE_OPENGL_CLASS_NAME "simple_openGL_class_name"
+#ifndef OPENGL_CONTROL
+#define OPENGL_CONTROL
 
 #include "common_header.h"
 
@@ -51,4 +52,4 @@ private:
 	void (*ptrInitScene)(void * param), (*ptrRenderScene)(void * param), (*ptrReleaseScene)(void * param);
 };
 
-//LRESULT CALLBACK msgHandlerSimpleOpenGLClass(HWND, UINT, WPARAM, LPARAM);
+#endif

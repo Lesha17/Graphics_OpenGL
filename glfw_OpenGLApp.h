@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef OPEN_GL_CONTROL
+#define OPEN_GL_CONTROL
+
 #include "openGLControl.h"
 
 #include <map>
@@ -33,8 +36,6 @@ private:
 	bool bAppActive; // To check if application is active (not minimized)
 	clock_t tLastFrame;
 	float fFrameInterval;
-
-	static std::map<GLFWwindow*,COpenGLApp*> windowToApp;
 };
 
 namespace Keys
@@ -45,3 +46,5 @@ namespace Keys
 extern COpenGLApp appMain;
 
 void InitScene(void *), RenderScene(void *), ReleaseScene(void *);
+
+#endif

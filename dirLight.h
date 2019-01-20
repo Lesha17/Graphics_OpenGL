@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef DIR_LIGHT
+#define DIR_LIGHT
+
 #include "shaders.h"
 
 // Support class for adding directional lights to scene.
@@ -16,3 +19,5 @@ public:
 	CDirectionalLight();
 	CDirectionalLight(glm::vec3 a_vColor, glm::vec3 a_vDirection, float a_fAmbient);
 };
+
+#endif

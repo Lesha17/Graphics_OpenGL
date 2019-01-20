@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef FLYING_CAMERA
+#define FLYING_CAMERA
+
 class CFlyingCamera
 {
 public:
@@ -24,3 +27,5 @@ public:
 private:
 	int iForw, iBack, iLeft, iRight;
 };
+
+#endif

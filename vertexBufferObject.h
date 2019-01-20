@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef C_VERTEX_BUFFER_OBJECT
+#define C_VERTEX_BUFFER_OBJECT
+
 // Wraps OpenGL vertex buffer object.
 class CVertexBufferObject
 {
@@ -29,3 +32,5 @@ private:
 
 	bool bDataUploaded;
 };
+
+#endif

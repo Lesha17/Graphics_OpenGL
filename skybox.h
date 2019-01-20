@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef SKYBOX
+#define SKYBOX
+
 #include "texture.h"
 #include "vertexBufferObject.h"
 
@@ -18,3 +21,5 @@ private:
 	string sDirectory;
 	string sFront, sBack, sLeft, sRight, sTop, sBottom;
 };
+
+#endif

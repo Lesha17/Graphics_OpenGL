@@ -3,6 +3,9 @@
 
 #include "glfw_OpenGLApp.h"
 
+std::map<GLFWwindow*,COpenGLApp*> windowToApp;
+COpenGLApp appMain;
+
 // Return true if Key is pressed.
 // iKey - virtual Key code
 int Keys::Key(int iKey)
