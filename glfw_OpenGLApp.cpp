@@ -140,6 +140,9 @@ bool COpenGLApp::CreateAppWindow(const char * tittle)
 
 	glfwShowWindow(window);
 
+    oglControl.ResizeOpenGLViewportFull();
+    oglControl.SetProjection3D(45.0f, float(oglControl.GetViewportWidth())/float(oglControl.GetViewportHeight()), 0.5f, 1000.0f);
+
 	return true;
 }
 
@@ -149,6 +152,7 @@ void COpenGLApp::AppBody()
 	while(!glfwWindowShouldClose(window))
 	{
 		glfwPollEvents();
+
 		if(bAppActive)
 		{
 			UpdateTimer();
