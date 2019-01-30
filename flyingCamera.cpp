@@ -57,7 +57,7 @@ void CFlyingCamera::RotateWithMouse()
 			vView += vEye;
 		}
 	}
-	SetCursorPos(iCentX, iCentY);
+	glfwSetCursorPos(appMain.window, iCentX, iCentY);
 }
 
 // Gets Y angle of camera (head turning left and right).
