@@ -73,7 +73,7 @@ void InitScene(void * param)
 
 	FOR(i, NUMTEXTURES)
 	{
-		tTextures[i].LoadTexture2D("data\\textures\\"+sTextureNames[i], true);
+		tTextures[i].LoadTexture2D("data/textures/"+sTextureNames[i], true);
 		tTextures[i].SetFiltering(TEXTURE_FILTER_MAG_BILINEAR, TEXTURE_FILTER_MIN_BILINEAR_MIPMAP);
 	}
 

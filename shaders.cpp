@@ -27,7 +27,7 @@ bool PrepareShaderPrograms()
 	{
 		string sExt = sShaderFileNames[i].substr(ESZ(sShaderFileNames[i])-4, 4);
 		int iShaderType = sExt == "vert" ? GL_VERTEX_SHADER : (sExt == "frag" ? GL_FRAGMENT_SHADER : GL_GEOMETRY_SHADER);
-		shShaders[i].LoadShader("data\\shaders\\"+sShaderFileNames[i], iShaderType);
+		shShaders[i].LoadShader("data/shaders/"+sShaderFileNames[i], iShaderType);
 	}
 
 	// Create shader programs
@@ -101,7 +101,7 @@ bool CShader::GetLinesFromFile(string sFile, bool bIncludePart, vector<string>* 
 	int slashIndex = -1;
 	RFOR(i, ESZ(sFile)-1)
 	{
-		if(sFile[i] == '\\' || sFile[i] == '/')
+		if(sFile[i] == '/' || sFile[i] == '/')
 		{
 			slashIndex = i;
 			break;

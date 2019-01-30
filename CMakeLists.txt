@@ -15,6 +15,8 @@ add_executable(OpenGL_2_2018_2019
         data/shaders/dirLight.frag
         data/shaders/main_shader.frag
         data/shaders/main_shader.vert
+        data/shaders/pointLight.frag
+        data/shaders/spotLight.frag
         data/skyboxes/jajlands1/jajlands1_bk.jpg
         data/skyboxes/jajlands1/jajlands1_dn.jpg
         data/skyboxes/jajlands1/jajlands1_ft.jpg
