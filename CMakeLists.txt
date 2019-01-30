@@ -29,23 +29,27 @@ add_executable(OpenGL_2_2018_2019
         common_header.h
         dirLight.cpp
         dirLight.h
+        pointLight.cpp
+        pointLight.h
+        spotLight.cpp
+        spotLight.h
         flyingCamera.cpp
         flyingCamera.h
         openGLControl.cpp
         openGLControl.h
-        renderScene.cpp
         shaders.cpp
         shaders.h
         skybox.cpp
         skybox.h
-        static_geometry.cpp
-        static_geometry.h
         texture.cpp
         texture.h
         vertexBufferObject.cpp
         vertexBufferObject.h
+        static_geometry.cpp
+        static_geometry.h
         glfw_OpenGLApp.cpp
         glfw_OpenGLApp.h
+        renderScene.cpp
         main.cpp)
 
 if(APPLE)

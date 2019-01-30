@@ -148,76 +148,22 @@ int GenerateCylinder(CVertexBufferObject &vboDest, float fRadius, float fHeight,
 	return iFacesAdded;
 }
 
-//glm::vec3 vCubeVertices[36] = 
-//{
-//	// Front face
-//	glm::vec3(-0.5f, 0.5f, 0.5f), glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(0.5f, -0.5f, 0.5f), glm::vec3(0.5f, -0.5f, 0.5f), glm::vec3(-0.5f, -0.5f, 0.5f), glm::vec3(-0.5f, 0.5f, 0.5f),
-//	// Back face
-//	glm::vec3(0.5f, 0.5f, -0.5f), glm::vec3(-0.5f, 0.5f, -0.5f), glm::vec3(-0.5f, -0.5f, -0.5f), glm::vec3(-0.5f, -0.5f, -0.5f), glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(0.5f, 0.5f, -0.5f),
-//	// Left face
-//	glm::vec3(-0.5f, 0.5f, -0.5f), glm::vec3(-0.5f, 0.5f, 0.5f), glm::vec3(-0.5f, -0.5f, 0.5f), glm::vec3(-0.5f, -0.5f, 0.5f), glm::vec3(-0.5f, -0.5f, -0.5f), glm::vec3(-0.5f, 0.5f, -0.5f),
-//	// Right face
-//	glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(0.5f, 0.5f, -0.5f), glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(0.5f, -0.5f, 0.5f), glm::vec3(0.5f, 0.5f, 0.5f),
-//	// Top face
-//	glm::vec3(-0.5f, 0.5f, -0.5f), glm::vec3(0.5f, 0.5f, -0.5f), glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(-0.5f, 0.5f, 0.5f), glm::vec3(-0.5f, 0.5f, -0.5f),
-//	// Bottom face
-//	glm::vec3(-0.5f, -0.5f, 0.5f), glm::vec3(0.5f, -0.5f, 0.5f), glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(-0.5f, -0.5f, -0.5f), glm::vec3(-0.5f, -0.5f, 0.5f)
-//};
-
-//glm::vec3 vCubeVertices2[24] =
-//{
-//	// Front face
-//	glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(0.5f, -0.5f, 0.5f), glm::vec3(-0.5f, 0.5f, 0.5f), glm::vec3(-0.5f, -0.5f, 0.5f),
-//	// Back face
-//	glm::vec3(-0.5f, 0.5f, -0.5f), glm::vec3(-0.5f, -0.5f, -0.5f), glm::vec3(0.5f, 0.5f, -0.5f), glm::vec3(0.5f, -0.5f, -0.5f),
-//	// Left face
-//	glm::vec3(-0.5f, 0.5f, 0.5f), glm::vec3(-0.5f, -0.5f, 0.5f), glm::vec3(-0.5f, 0.5f, -0.5f), glm::vec3(-0.5f, -0.5f, -0.5f),
-//	// Right face
-//	glm::vec3(0.5f, 0.5f, -0.5f), glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(0.5f, -0.5f, 0.5f),
-//	// Top face
-//	glm::vec3(-0.5f, 0.5f, -0.5f), glm::vec3(0.5f, 0.5f, -0.5f), glm::vec3(-0.5f, 0.5f, 0.5f), glm::vec3(0.5f, 0.5f, 0.5f),
-//	// Bottom face
-//	glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(-0.5f, -0.5f, -0.5f), glm::vec3(0.5f, -0.5f, 0.5f), glm::vec3(-0.5f, -0.5f, 0.5f),
-//};
-//
-//unsigned int iCubeindices[36] = 
-//{
-//	0, 2, 1,  1, 2, 3, // front
-//	4, 6, 5,  5, 6, 7, // back
-//	8, 10, 9,  9, 10, 11, // left
-//	12, 14, 13,  13, 14, 15,  // right
-//	16, 18, 17,  17, 18, 19, // top
-//	20, 22, 21,  21, 22, 23 // bottom
-//};
-
-glm::vec3 vCubeVertices2[8] =
+glm::vec3 vCubeVertices[36] = 
 {
 	// Front face
-	glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(0.5f, -0.5f, 0.5f), glm::vec3(-0.5f, 0.5f, 0.5f), glm::vec3(-0.5f, -0.5f, 0.5f),
+	glm::vec3(-0.5f, 0.5f, 0.5f), glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(0.5f, -0.5f, 0.5f), glm::vec3(0.5f, -0.5f, 0.5f), glm::vec3(-0.5f, -0.5f, 0.5f), glm::vec3(-0.5f, 0.5f, 0.5f),
 	// Back face
-	glm::vec3(-0.5f, 0.5f, -0.5f), glm::vec3(-0.5f, -0.5f, -0.5f), glm::vec3(0.5f, 0.5f, -0.5f), glm::vec3(0.5f, -0.5f, -0.5f),
-	//// Left face
-	//glm::vec3(-0.5f, 0.5f, 0.5f), glm::vec3(-0.5f, -0.5f, 0.5f), glm::vec3(-0.5f, 0.5f, -0.5f), glm::vec3(-0.5f, -0.5f, -0.5f),
-	//// Right face
-	//glm::vec3(0.5f, 0.5f, -0.5f), glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(0.5f, -0.5f, 0.5f),
-	//// Top face
-	//glm::vec3(-0.5f, 0.5f, -0.5f), glm::vec3(0.5f, 0.5f, -0.5f), glm::vec3(-0.5f, 0.5f, 0.5f), glm::vec3(0.5f, 0.5f, 0.5f),
-	//// Bottom face
-	//glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(-0.5f, -0.5f, -0.5f), glm::vec3(0.5f, -0.5f, 0.5f), glm::vec3(-0.5f, -0.5f, 0.5f),
-};
-
-
-unsigned int iCubeindices[36] =
-{
-	0, 2, 1, 1, 2, 3, // front
-	4, 6, 5, 5, 6, 7, // back
-	5, 2, 4, 5, 3, 2, // left
-	1, 7, 6, 1, 6, 0,  // right
-	0, 6, 4, 0, 4, 2, // top
-	1, 5, 7, 1, 3, 5 // bottom
+	glm::vec3(0.5f, 0.5f, -0.5f), glm::vec3(-0.5f, 0.5f, -0.5f), glm::vec3(-0.5f, -0.5f, -0.5f), glm::vec3(-0.5f, -0.5f, -0.5f), glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(0.5f, 0.5f, -0.5f),
+	// Left face
+	glm::vec3(-0.5f, 0.5f, -0.5f), glm::vec3(-0.5f, 0.5f, 0.5f), glm::vec3(-0.5f, -0.5f, 0.5f), glm::vec3(-0.5f, -0.5f, 0.5f), glm::vec3(-0.5f, -0.5f, -0.5f), glm::vec3(-0.5f, 0.5f, -0.5f),
+	// Right face
+	glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(0.5f, 0.5f, -0.5f), glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(0.5f, -0.5f, 0.5f), glm::vec3(0.5f, 0.5f, 0.5f),
+	// Top face
+	glm::vec3(-0.5f, 0.5f, -0.5f), glm::vec3(0.5f, 0.5f, -0.5f), glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(-0.5f, 0.5f, 0.5f), glm::vec3(-0.5f, 0.5f, -0.5f),
+	// Bottom face
+	glm::vec3(-0.5f, -0.5f, 0.5f), glm::vec3(0.5f, -0.5f, 0.5f), glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(-0.5f, -0.5f, -0.5f), glm::vec3(-0.5f, -0.5f, 0.5f),
 };
 glm::vec2 vCubeTexCoords[6] = {glm::vec2(0.0f, 1.0f), glm::vec2(1.0f, 1.0f), glm::vec2(1.0f, 0.0f), glm::vec2(1.0f, 0.0f), glm::vec2(0.0f, 0.0f), glm::vec2(0.0f, 1.0f)};
-glm::vec2 vCubeTexCoords2[4] = { glm::vec2(0.0f, 1.0f), glm::vec2(0.0f, 0.0f), glm::vec2(1.0f, 1.0f), glm::vec2(1.0f, 0.0f) };
 
 glm::vec3 vCubeNormals[6] = 
 {
@@ -232,6 +178,33 @@ glm::vec3 vCubeNormals[6] =
 glm::vec3 vGround[6] = 
 {
 	glm::vec3(-1000, 0, -1000), glm::vec3(-1000, 0, 1000), glm::vec3(1000, 0, 1000), glm::vec3(1000, 0, 1000), glm::vec3(1000, 0, -1000), glm::vec3(-1000, 0, -1000)
+};
+
+glm::vec3 vStair[] = 
+{
+	glm::vec3(-40.0f, 4.0f, -15.0f), glm::vec3(0.0f, 4.0f, -15.0f), glm::vec3(0.0f, 4.0f, 0.0f), glm::vec3(-40.0f, 4.0f, 0.0f), // Top
+	glm::vec3(-40.0f, 4.0f, 0.0f), glm::vec3(0.0f, 4.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(-40.0f, 0.0f, 0.0f), // Front
+	glm::vec3(0.0f, 4.0f, -15.0f), glm::vec3(-40.0f, 4.0f, -15.0f), glm::vec3(-40.0f, 0.0f, -15.0f), glm::vec3(0.0f, 0.0f, -15.0f), // Back
+	glm::vec3(-40.0f, 4.0f, -15.0f), glm::vec3(-40.0f, 4.0f, 0.0f), glm::vec3(-40.0f, 0.0f, 0.0f), glm::vec3(-40.0f, 0.0f, -15.0f), // Left
+	glm::vec3(0.0f, 4.0f, 0.0f), glm::vec3(0.0f, 4.0f, -15.0f), glm::vec3(0.0f, 0.0f, -15.0f), glm::vec3(0.0f, 0.0f, 0.0f), // Right
+};
+
+glm::vec2 vStairCoords[] = 
+{
+	glm::vec2(0.0f, 0.9f), glm::vec2(2.0f, 0.9f), glm::vec2(2.0f, 0.0f), glm::vec2(0.0f, 0.0f),
+	glm::vec2(0.0f, 0.2f), glm::vec2(2.0f, 0.2f), glm::vec2(2.0f, 0.0f), glm::vec2(0.0f, 0.0f),
+	glm::vec2(0.0f, 0.2f), glm::vec2(2.0f, 0.2f), glm::vec2(2.0f, 0.0f), glm::vec2(0.0f, 0.0f),
+	glm::vec2(0.0f, 0.2f), glm::vec2(0.9f, 0.2f), glm::vec2(0.9f, 0.0f), glm::vec2(0.0f, 0.0f),
+	glm::vec2(0.0f, 0.2f), glm::vec2(0.9f, 0.2f), glm::vec2(0.9f, 0.0f), glm::vec2(0.0f, 0.0f)
+};
+
+glm::vec3 vStairNormals[] = 
+{
+	glm::vec3(0.0f, 1.0f, 0.0f),
+	glm::vec3(0.0f, 0.0f, 1.0f),
+	glm::vec3(0.0f, 0.0f, -1.0f),
+	glm::vec3(-1.0f, 0.0f, 0.0f),
+	glm::vec3(1.0f, 0.0f, 0.0f)
 };
 
 int iTorusFaces, iTorusFaces2;
@@ -250,20 +223,15 @@ void AddSceneObjects(CVertexBufferObject& vboDest)
 		vboDest.AddData(&vGroundNormal, sizeof(glm::vec3));
 	}
 
-	iTorusFaces = GenerateTorus(vboDest, 7.0f, 2.0f, 20, 20);
-	iTorusFaces2 = GenerateTorus(vboDest, 3.0f, 1.0f, 20, 20);
-}
-
-// Adds all static objects to scene.
-// vboDest - VBO where to store objects
-void AddCube(CVertexBufferObject& vboDest)
-{
 	// Add cube to VBO
 
-	FOR(i, 8)
+	FOR(i, 36)
 	{
-		vboDest.AddData(&vCubeVertices2[i], sizeof(glm::vec3));
-		vboDest.AddData(&vCubeTexCoords2[i % 4], sizeof(glm::vec2));
-		vboDest.AddData(&vCubeNormals[i / 4], sizeof(glm::vec3));
+		vboDest.AddData(&vCubeVertices[i], sizeof(glm::vec3));
+		vboDest.AddData(&vCubeTexCoords[i % 6], sizeof(glm::vec2));
+		vboDest.AddData(&vCubeNormals[i / 6], sizeof(glm::vec3));
 	}
+
+	iTorusFaces = GenerateTorus(vboDest, 7.0f, 2.0f, 20, 20);
+	iTorusFaces2 = GenerateTorus(vboDest, 3.0f, 1.0f, 20, 20);
 }

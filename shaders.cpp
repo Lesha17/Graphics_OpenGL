@@ -19,15 +19,15 @@ bool PrepareShaderPrograms()
 {
 	// Load shaders and create shader program
 
-	string sShaderFileNames[] = {"main_shader.vert", "main_shader.frag", "dirLight.frag", 
-		"color.vert", "color.frag"
+	string sShaderFileNames[] = {"main_shader.vert", "main_shader.frag", "dirLight.frag", "pointLight.frag",
+		"color.vert", "color.frag", "spotLight.frag",
 	};
 
 	FOR(i, NUMSHADERS)
 	{
 		string sExt = sShaderFileNames[i].substr(ESZ(sShaderFileNames[i])-4, 4);
 		int iShaderType = sExt == "vert" ? GL_VERTEX_SHADER : (sExt == "frag" ? GL_FRAGMENT_SHADER : GL_GEOMETRY_SHADER);
-		shShaders[i].LoadShader("data/shaders/"+sShaderFileNames[i], iShaderType);
+		shShaders[i].LoadShader("data\\shaders\\"+sShaderFileNames[i], iShaderType);
 	}
 
 	// Create shader programs
@@ -36,17 +36,15 @@ bool PrepareShaderPrograms()
 	spMain.AddShaderToProgram(&shShaders[0]);
 	spMain.AddShaderToProgram(&shShaders[1]);
 	spMain.AddShaderToProgram(&shShaders[2]);
-	//spMain.AddShaderToProgram(&shShaders[3]);
-	//spMain.AddShaderToProgram(&shShaders[6]);
+	spMain.AddShaderToProgram(&shShaders[3]);
+	spMain.AddShaderToProgram(&shShaders[6]);
 	spMain.LinkProgram();
 
 	if(!spMain.LinkProgram())return false;
 
 	spColor.CreateProgram();
-	spColor.AddShaderToProgram(&shShaders[3]);
 	spColor.AddShaderToProgram(&shShaders[4]);
-	//spColor.AddShaderToProgram(&shShaders[4]);
-	//spColor.AddShaderToProgram(&shShaders[5]);
+	spColor.AddShaderToProgram(&shShaders[5]);
 	spColor.LinkProgram();
 
 	return true;
@@ -81,7 +79,7 @@ bool CShader::LoadShader(string sFile, int a_iType)
 		int iLogLength;
 		glGetShaderInfoLog(uiShader, 1024, &iLogLength, sInfoLog);
 		sprintf(sFinalMessage, "Error! Shader file %s wasn't compiled! The compiler returned:\n\n%s", sFile.c_str(), sInfoLog);
-		fprintf(stderr, "Error: %s\n", sFinalMessage);
+		//MessageBox(NULL, sFinalMessage, "Error", MB_ICONERROR);
 		return false;
 	}
 	iType = a_iType;
@@ -152,7 +150,7 @@ bool CShader::IsLoaded()
 }
 
 // Returns ID of a generated shader.
-uint CShader::GetShaderID()
+unsigned int CShader::GetShaderID()
 {
 	return uiShader;
 }
@@ -212,7 +210,7 @@ void CShaderProgram::UseProgram()
 }
 
 // Returns OpenGL generated shader program ID.
-uint CShaderProgram::GetProgramID()
+unsigned int CShaderProgram::GetProgramID()
 {
 	return uiProgram;
 }
@@ -276,13 +274,13 @@ void CShaderProgram::SetUniform(string sName, const glm::vec4 &vVector)
 void CShaderProgram::SetUniform(string sName, glm::mat3* mMatrices, int iCount)
 {
 	int iLoc = glGetUniformLocation(uiProgram, sName.c_str());
-	glUniformMatrix3fv(iLoc, iCount, 0, (GLfloat*)mMatrices);
+	glUniformMatrix3fv(iLoc, iCount, GL_FALSE, (GLfloat*)mMatrices);
 }
 
 void CShaderProgram::SetUniform(string sName, const glm::mat3 mMatrix)
 {
 	int iLoc = glGetUniformLocation(uiProgram, sName.c_str());
-	glUniformMatrix3fv(iLoc, 1, 0, (GLfloat*)&mMatrix);
+	glUniformMatrix3fv(iLoc, 1, GL_FALSE, (GLfloat*)&mMatrix);
 }
 
 // Setting 4x4 matrices
@@ -290,13 +288,13 @@ void CShaderProgram::SetUniform(string sName, const glm::mat3 mMatrix)
 void CShaderProgram::SetUniform(string sName, glm::mat4* mMatrices, int iCount)
 {
 	int iLoc = glGetUniformLocation(uiProgram, sName.c_str());
-	glUniformMatrix4fv(iLoc, iCount, 0, (GLfloat*)mMatrices);
+	glUniformMatrix4fv(iLoc, iCount, GL_FALSE, (GLfloat*)mMatrices);
 }
 
 void CShaderProgram::SetUniform(string sName, const glm::mat4 &mMatrix)
 {
 	int iLoc = glGetUniformLocation(uiProgram, sName.c_str());
-	glUniformMatrix4fv(iLoc, 1, 0, (GLfloat*)&mMatrix);
+	glUniformMatrix4fv(iLoc, 1, GL_FALSE, (GLfloat*)&mMatrix);
 }
 
 // Setting integers

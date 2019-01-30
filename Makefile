@@ -258,6 +258,33 @@ openGLControl.cpp.s:
 	$(MAKE) -f CMakeFiles/OpenGL_2_2018_2019.dir/build.make CMakeFiles/OpenGL_2_2018_2019.dir/openGLControl.cpp.s
 .PHONY : openGLControl.cpp.s
 
+pointLight.o: pointLight.cpp.o
+
+.PHONY : pointLight.o
+
+# target to build an object file
+pointLight.cpp.o:
+	$(MAKE) -f CMakeFiles/OpenGL_2_2018_2019.dir/build.make CMakeFiles/OpenGL_2_2018_2019.dir/pointLight.cpp.o
+.PHONY : pointLight.cpp.o
+
+pointLight.i: pointLight.cpp.i
+
+.PHONY : pointLight.i
+
+# target to preprocess a source file
+pointLight.cpp.i:
+	$(MAKE) -f CMakeFiles/OpenGL_2_2018_2019.dir/build.make CMakeFiles/OpenGL_2_2018_2019.dir/pointLight.cpp.i
+.PHONY : pointLight.cpp.i
+
+pointLight.s: pointLight.cpp.s
+
+.PHONY : pointLight.s
+
+# target to generate assembly for a file
+pointLight.cpp.s:
+	$(MAKE) -f CMakeFiles/OpenGL_2_2018_2019.dir/build.make CMakeFiles/OpenGL_2_2018_2019.dir/pointLight.cpp.s
+.PHONY : pointLight.cpp.s
+
 renderScene.o: renderScene.cpp.o
 
 .PHONY : renderScene.o
@@ -338,6 +365,33 @@ skybox.s: skybox.cpp.s
 skybox.cpp.s:
 	$(MAKE) -f CMakeFiles/OpenGL_2_2018_2019.dir/build.make CMakeFiles/OpenGL_2_2018_2019.dir/skybox.cpp.s
 .PHONY : skybox.cpp.s
+
+spotLight.o: spotLight.cpp.o
+
+.PHONY : spotLight.o
+
+# target to build an object file
+spotLight.cpp.o:
+	$(MAKE) -f CMakeFiles/OpenGL_2_2018_2019.dir/build.make CMakeFiles/OpenGL_2_2018_2019.dir/spotLight.cpp.o
+.PHONY : spotLight.cpp.o
+
+spotLight.i: spotLight.cpp.i
+
+.PHONY : spotLight.i
+
+# target to preprocess a source file
+spotLight.cpp.i:
+	$(MAKE) -f CMakeFiles/OpenGL_2_2018_2019.dir/build.make CMakeFiles/OpenGL_2_2018_2019.dir/spotLight.cpp.i
+.PHONY : spotLight.cpp.i
+
+spotLight.s: spotLight.cpp.s
+
+.PHONY : spotLight.s
+
+# target to generate assembly for a file
+spotLight.cpp.s:
+	$(MAKE) -f CMakeFiles/OpenGL_2_2018_2019.dir/build.make CMakeFiles/OpenGL_2_2018_2019.dir/spotLight.cpp.s
+.PHONY : spotLight.cpp.s
 
 static_geometry.o: static_geometry.cpp.o
 
@@ -444,6 +498,9 @@ help:
 	@echo "... openGLControl.o"
 	@echo "... openGLControl.i"
 	@echo "... openGLControl.s"
+	@echo "... pointLight.o"
+	@echo "... pointLight.i"
+	@echo "... pointLight.s"
 	@echo "... renderScene.o"
 	@echo "... renderScene.i"
 	@echo "... renderScene.s"
@@ -453,6 +510,9 @@ help:
 	@echo "... skybox.o"
 	@echo "... skybox.i"
 	@echo "... skybox.s"
+	@echo "... spotLight.o"
+	@echo "... spotLight.i"
+	@echo "... spotLight.s"
 	@echo "... static_geometry.o"
 	@echo "... static_geometry.i"
 	@echo "... static_geometry.s"

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef SHADERS
-#define SHADERS
-
 // Wraps OpenGL shader loading and compiling.
 class CShader
 {
@@ -13,12 +10,12 @@ public:
 	bool GetLinesFromFile(string sFile, bool bIncludePart, vector<string>* vResult);
 
 	bool IsLoaded();
-	uint GetShaderID();
+	unsigned int GetShaderID();
 
 	CShader();
 
 private:
-	uint uiShader; // ID of shader
+	unsigned int uiShader; // ID of shader
 	int iType; // GL_VERTEX_SHADER, GL_FRAGMENT_SHADER...
 	bool bLoaded; // Whether shader was loaded and compiled
 };
@@ -35,7 +32,7 @@ public:
 
 	void UseProgram();
 
-	uint GetProgramID();
+	unsigned int GetProgramID();
 
 	// Setting vectors
 	void SetUniform(string sName, glm::vec2* vVectors, int iCount = 1);
@@ -64,15 +61,13 @@ public:
 	CShaderProgram();
 
 private:
-	uint uiProgram; // ID of program
+	unsigned int uiProgram; // ID of program
 	bool bLinked; // Whether program was linked and is ready to use
 };
 
 bool PrepareShaderPrograms();
 
-#define NUMSHADERS 5
+#define NUMSHADERS 7
 
 extern CShader shShaders[NUMSHADERS];
 extern CShaderProgram spMain, spColor;
-
-#endif
