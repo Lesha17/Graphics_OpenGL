@@ -29,7 +29,9 @@ bool PrepareShaderPrograms()
 	{
 		string sExt = sShaderFileNames[i].substr(ESZ(sShaderFileNames[i])-4, 4);
 		int iShaderType = sExt == "vert" ? GL_VERTEX_SHADER : (sExt == "frag" ? GL_FRAGMENT_SHADER : GL_GEOMETRY_SHADER);
-		shShaders[i].LoadShader("data/shaders/"+sShaderFileNames[i], iShaderType);
+		if(!shShaders[i].LoadShader("data/shaders/"+sShaderFileNames[i], iShaderType)) {
+			std::cerr <<  "Failed to load shader: "<<  sShaderFileNames[i] << std::endl;
+		}
 	}
 
 	// Create shader programs
@@ -39,17 +41,11 @@ bool PrepareShaderPrograms()
 	spMain.AddShaderToProgram(&shShaders[1]);
 	spMain.AddShaderToProgram(&shShaders[2]);
 	spMain.AddShaderToProgram(&shShaders[3]);
-	spMain.AddShaderToProgram(&shShaders[6]);
-	spMain.LinkProgram();
+	spMain.AddShaderToProgram(&shShaders[4]);
 
 	if(!spMain.LinkProgram())return false;
 
 	spColor.CreateProgram();
-	//spColor.AddShaderToProgram(&shShaders[0]);
-	spColor.AddShaderToProgram(&shShaders[1]);
-	spColor.AddShaderToProgram(&shShaders[2]);
-	spColor.AddShaderToProgram(&shShaders[3]);
-	spColor.AddShaderToProgram(&shShaders[4]);
 	spColor.AddShaderToProgram(&shShaders[5]);
 	spColor.AddShaderToProgram(&shShaders[6]);
 	spColor.LinkProgram();
@@ -86,6 +82,7 @@ bool CShader::LoadShader(string sFile, int a_iType)
 		int iLogLength;
 		glGetShaderInfoLog(uiShader, 1024, &iLogLength, sInfoLog);
 		sprintf(sFinalMessage, "Error! Shader file %s wasn't compiled! The compiler returned:\n\n%s", sFile.c_str(), sInfoLog);
+		std::cerr << sFinalMessage << std::endl;
 		//MessageBox(NULL, sFinalMessage, "Error", MB_ICONERROR);
 		return false;
 	}

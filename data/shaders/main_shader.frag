@@ -21,7 +21,7 @@ void main()
 {
 	vec3 vNormalized = normalize(vNormal);
 	
-	vec4 vTexColor = texture2D(gSampler, vTexCoord);
+	vec4 vTexColor = texture(gSampler, vTexCoord);
 	vec4 vMixedColor = vTexColor*vColor;
 	vec4 vDirLightColor = getDirectionalLightColor(sunLight, vNormal);
 	vec4 vSpotlightColor = GetSpotLightColor(spotLight, vWorldPos);
