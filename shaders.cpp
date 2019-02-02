@@ -6,6 +6,8 @@
 
 #include <glm/gtc/type_ptr.hpp>
 
+#include <iostream>
+
 CShader::CShader()
 {
 	bLoaded = false;
@@ -19,8 +21,8 @@ bool PrepareShaderPrograms()
 {
 	// Load shaders and create shader program
 
-	string sShaderFileNames[] = {"main_shader.vert", "main_shader.frag", "dirLight.frag", "pointLight.frag",
-		"color.vert", "color.frag", "spotLight.frag",
+	string sShaderFileNames[] = {"main_shader.vert", "main_shader.frag", "dirLight.frag", "pointLight.frag", "spotLight.frag",
+		"color.vert", "color.frag",
 	};
 
 	FOR(i, NUMSHADERS)
@@ -43,8 +45,13 @@ bool PrepareShaderPrograms()
 	if(!spMain.LinkProgram())return false;
 
 	spColor.CreateProgram();
+	//spColor.AddShaderToProgram(&shShaders[0]);
+	spColor.AddShaderToProgram(&shShaders[1]);
+	spColor.AddShaderToProgram(&shShaders[2]);
+	spColor.AddShaderToProgram(&shShaders[3]);
 	spColor.AddShaderToProgram(&shShaders[4]);
 	spColor.AddShaderToProgram(&shShaders[5]);
+	spColor.AddShaderToProgram(&shShaders[6]);
 	spColor.LinkProgram();
 
 	return true;
@@ -192,6 +199,15 @@ bool CShaderProgram::LinkProgram()
 	int iLinkStatus;
 	glGetProgramiv(uiProgram, GL_LINK_STATUS, &iLinkStatus);
 	bLinked = iLinkStatus == GL_TRUE;
+	if(iLinkStatus != GL_TRUE) {
+	    GLchar log[512];
+        GLsizei len;
+
+	    glGetProgramInfoLog(uiProgram, 512, &len, log);
+        log[len] = '\0';
+
+	    std::cerr << "Error: " << log << std::endl;
+	}
 	return bLinked;
 }
 
